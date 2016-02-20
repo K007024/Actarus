@@ -1,6 +1,10 @@
 # coding: utf-8
 
+class ViewDirControl:
 
-Test 2
-Test 3
-Test 4
+    def __init__(self, name):
+        self.name = name
+        self.buildPanel()
+
+    def buildPanel(self):
+        print "build panel " + self.name
