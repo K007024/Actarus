@@ -39,13 +39,9 @@ class ViewDirControl(Tk.Frame):
         return total_size
 
     def get_size_fast(self, start_path):
-        folderPath = start_path
         fso = com.Dispatch("Scripting.FileSystemObject")
-        folder = fso.GetFolder(folderPath)
-        MB=1024*1024.0
+        folder = fso.GetFolder(start_path)
         return folder.Size
-
-
 
 if __name__ == '__main__':
     root = ViewDirControl(None, "This")
