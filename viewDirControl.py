@@ -21,14 +21,14 @@ class ViewDirControl(Tk.Frame):
         self.entry = Tk.Entry(self, textvariable=self.txtPath).grid(column=1, row=0, sticky='EW')
         self.btn = Tk.Button(self, text='Open', command=self.open).grid(column=2, row=0, sticky='EW')
 
-        self.lbSize = Tk.Label(self, text='0 go')
+        self.lbSize = Tk.Label(self, text='000.00 go')
         self.lbSize.grid(column=3, row=0, sticky='EW')
 
     def open(self):
         dirPath = tkFileDialog.askdirectory()
         if dirPath:
             self.txtPath.set(dirPath)
-            self.lbSize.config(text='{:<10.2f} go'.format(self.get_size_fast(dirPath)/(1024*1024*1024.0)))
+            self.lbSize.config(text='{:0<6.2f} go'.format(self.get_size_fast(dirPath)/(1024*1024*1024.0)))
 
     def get_size(self, start_path):
         total_size = 0
